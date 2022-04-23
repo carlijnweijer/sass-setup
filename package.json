@@ -1,0 +1,17 @@
+{
+  "name": "sass-boilerplate",
+  "version": "1.0.0",
+  "description": "CLI to make sass setup easy ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Carlijn van de Weijer",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.2.2",
+    "sass": "^1.50.1"
+  }
+}

@@ -1,0 +1,52 @@
+@use "../util" as *;
+
+h1 {
+  font-size: rem(40);
+  line-height: rem(48);
+
+  @include responsiveMin(tablet) {
+    font-size: rem(48);
+    line-height: rem(56);
+  }
+
+  @include responsiveMin(desktop) {
+    font-size: rem(56);
+    line-height: rem(62);
+  }
+}
+
+h2 {
+  font-size: rem(34);
+  margin-bottom: rem(42);
+
+  @include responsiveMin(tablet) {
+    font-size: rem(40);
+    margin-bottom: rem(48);
+  }
+
+  @include responsiveMin(desktop) {
+    font-size: rem(48);
+    margin-bottom: rem(56);
+  }
+}
+
+h3 {
+  font-size: rem(26);
+  margin-bottom: rem(34);
+
+  @include responsiveMin(tablet) {
+    font-size: rem(32);
+    margin-bottom: rem(40);
+  }
+
+  @include responsiveMin(desktop) {
+    font-size: rem(40);
+    margin-bottom: rem(48);
+  }
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
