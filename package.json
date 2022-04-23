@@ -2,16 +2,31 @@
   "name": "sass-boilerplate",
   "version": "1.0.0",
   "description": "CLI to make sass setup easy ",
-  "main": "index.js",
+  "main": "src/index.js",
+  "bin": "src/index.js",
   "type": "module",
   "scripts": {
     "start": "node src/index.js"
   },
+  "keywords": [
+    "sass",
+    "cli",
+    "boilerplate",
+    "sass template"
+  ],
   "author": "Carlijn van de Weijer",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "fs-extra": "^10.1.0",
     "inquirer": "^8.2.2",
     "sass": "^1.50.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlijnweijer/sass-setup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/carlijnweijer/sass-setup/issues"
+  },
+  "homepage": "https://github.com/carlijnweijer/sass-setup#readme"
 }
