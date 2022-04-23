@@ -7,10 +7,15 @@ import chalk from "chalk";
 
 const CURR_DIR = process.cwd();
 const templatePath = path.join(CURR_DIR, "node_modules/sass-setup/src/sass");
-const targetPath = path.join(CURR_DIR, "src/styles");
 
 inquirer
   .prompt([
+    {
+      type: "list",
+      name: "framework",
+      message: "Which framework do you want to use?",
+      choices: ["react", "nextjs"],
+    },
     {
       type: "confirm",
       name: "create",
@@ -24,8 +29,13 @@ inquirer
 
       console.log(chalk.magenta.bold("💄 Installed sass 💄"));
     }
-  })
-  .then(() => {
+
+    const framework = answers.framework;
+    const targetPath =
+      framework === "react"
+        ? path.join(CURR_DIR, "src/styles")
+        : path.join(CURR_DIR, "styles");
+
     if (!fs.existsSync(targetPath)) {
       fs.mkdirSync(targetPath);
     }
