@@ -5,7 +5,7 @@ import path from "path";
 import fs from "fs";
 
 const CURR_DIR = process.cwd();
-const templatePath = "src/sass";
+const templatePath = path.join(CURR_DIR, "node_modules/sass-setup/src/sass");
 const targetPath = path.join(CURR_DIR, "src/styles");
 
 inquirer
