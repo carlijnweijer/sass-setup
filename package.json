@@ -1,6 +1,6 @@
 {
-  "name": "sass-boilerplate",
-  "version": "1.0.0",
+  "name": "sass-setup",
+  "version": "1.0.1",
   "description": "CLI to make sass setup easy ",
   "main": "src/index.js",
   "bin": "src/index.js",
