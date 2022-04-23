@@ -23,7 +23,9 @@ inquirer
     }
   })
   .then(() => {
-    fs.mkdirSync(targetPath);
+    if (!fs.existsSync(targetPath)) {
+      fs.mkdirSync(targetPath);
+    }
 
     createDirectoryContents(templatePath, targetPath);
   })
