@@ -2,7 +2,8 @@
 import * as cp from "child_process";
 import inquirer from "inquirer";
 import path from "path";
-import fs from "fs";
+import fs, { mkdir } from "fs";
+import chalk from "chalk";
 
 const CURR_DIR = process.cwd();
 const templatePath = path.join(CURR_DIR, "node_modules/sass-setup/src/sass");
@@ -13,13 +14,15 @@ inquirer
     {
       type: "confirm",
       name: "create",
-      message: "Do you want to install sass as a dependency?",
+      message:
+        "This package will also install/update the latest version of sass. Continue?",
     },
   ])
   .then((answers) => {
     if (answers.create) {
       cp.execSync("npm i sass");
-      console.log("installed sass");
+
+      console.log(chalk.magenta.bold("💄 Installed sass 💄"));
     }
   })
   .then(() => {
@@ -28,6 +31,7 @@ inquirer
     }
 
     createDirectoryContents(templatePath, targetPath);
+    console.log(chalk.green.bold("✨ Successfully created scss files ✨"));
   })
   .catch((error) => {
     if (error.isTtyError) {
@@ -48,8 +52,9 @@ function createDirectoryContents(templatePath, newPath) {
       fs.writeFileSync(writePath, contents, "utf8");
     } else if (stats.isDirectory()) {
       const newSubFolder = path.join(newPath, file);
-      fs.mkdirSync(newSubFolder);
-
+      if (!fs.existsSync(newSubFolder)) {
+        fs.mkdirSync(newSubFolder);
+      }
       if (fs.existsSync(newSubFolder)) {
         createDirectoryContents(
           path.join(templatePath, file),
