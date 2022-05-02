@@ -2,7 +2,8 @@
 
 Install as a dev dependency on a particular project:
 
-```yarn add -D sass-setup
+```
+yarn add -D sass-setup
 npx sass-setup
 ```
 
